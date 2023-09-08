@@ -16,7 +16,6 @@ export default function App() {
      <Routes>
        <Route path="/" element={<Home />}/>
        <Route path="/products" element={<ProductList />}/>
-       <Route path="/About" element={<ProductList />}/>
       
      </Routes>
     </BrowserRouter>

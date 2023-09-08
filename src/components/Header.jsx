@@ -1,6 +1,6 @@
 const links = [
-    { name: 'Open roles', href: '#' },
-    { name: 'Internship program', href: '#' },
+    { name: 'Cars avalable in your country', href: '#' },
+    { name: 'Cars Dealers With Especial discount', href: '#' },
     { name: 'Our values', href: '#' },
     { name: 'Meet our leadership', href: '#' },
   ]
@@ -45,7 +45,7 @@ const links = [
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
+            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Discover the experience of <a className="text-red-600 underline rent--car--text " href="">RentCars</a> with Us</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat fugiat aliqua.

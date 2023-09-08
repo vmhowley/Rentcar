@@ -1,44 +1,17 @@
-import Navbar from "./Navbar"
+import  db  from '../firebase'
+import { getDatabase, ref, onValue } from "firebase/database";
 
-const products = [
-    {
-      id: 1,
-      name: 'Tshirt Tee',
-      href: '#',
-      imageSrc: 'https://wallpaperaccess.com/full/218263.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://images.unsplash.com/photo-1610099610040-ab19f3a5ec35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGx1eHVyeSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://hips.hearstapps.com/hmg-prod/images/2022-mclaren-765lt-spider-115-1652724748.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'blue',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: '$35',
-      color: 'Black',
-    },
-    // More products...
-  ]
+const cars = ref(db, 'cars/');
+onValue(cars, (snapshot) => {
+  const data = snapshot.val();
+  console.log(data);
+})
+
+
+
+const products = [cars]
+
+console.log();
   
   export default function ProductList() {
     return (
