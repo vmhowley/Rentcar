@@ -19,7 +19,7 @@ export default function Navbar() {
     <>
             
 
-    <Disclosure as="nav" className="">
+    <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="src\assets\logo.svg"
+                    src="src\assets\logo1.png"
                     alt="Your Company"
                   />
                 </div>
