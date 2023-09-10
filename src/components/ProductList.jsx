@@ -1,29 +1,31 @@
+import React, {Suspense, useState, useEffect} from 'react'
 import  db  from '../firebase'
 import { getDatabase, ref, onValue } from "firebase/database";
 
-const cars = ref(db, 'cars/');
-onValue(cars, (snapshot) => {
-  const data = snapshot.val();
-  console.log(data);
-})
-
-
-
-const products = [cars]
-
-console.log();
-  
   export default function ProductList() {
-    return (
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+      const query = ref(db, "cars")
+      return onValue(query, (snapshot) => {
+        const data = snapshot.val();
+        if (snapshot.exists()) {
+          Object.values(data).map((product) => {
+            setProducts((products) => [...products, product]);
+          });
+        }
+      });
+    }, []);
+const productos = products
+    return (
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">Cars Available in Dominican Republic</h2>
   
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 font-bold">
-            {products.map((product) => (
+            {productos.map((product) => (
               <div key={product.id} className="group relative">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md hover:blur bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
